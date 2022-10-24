@@ -1,3 +1,4 @@
+// Connecting Strapi to Cloudinary
 module.exports = [
   "strapi::errors",
   {
