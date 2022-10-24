@@ -63,14 +63,14 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "phone": {
-      "type": "biginteger"
-    },
-    "lokals": {
+    "premises": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::lokal.lokal",
+      "target": "api::premise.premise",
       "mappedBy": "user"
+    },
+    "phone": {
+      "type": "string"
     }
   }
 }

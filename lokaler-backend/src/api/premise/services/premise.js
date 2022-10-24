@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * lokal service
+ * premise service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::lokal.lokal');
+module.exports = createCoreService('api::premise.premise');

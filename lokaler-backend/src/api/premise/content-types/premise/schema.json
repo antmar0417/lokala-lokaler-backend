@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "lokals",
+  "collectionName": "premises",
   "info": {
-    "singularName": "lokal",
-    "pluralName": "lokals",
-    "displayName": "lokaler",
-    "description": ""
+    "singularName": "premise",
+    "pluralName": "premises",
+    "displayName": "premises"
   },
   "options": {
     "draftAndPublish": true
@@ -35,21 +34,20 @@
       "type": "richtext"
     },
     "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "lokals"
+      "inversedBy": "premises"
     }
   }
 }
