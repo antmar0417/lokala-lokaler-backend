@@ -6,9 +6,6 @@
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
-// module.exports = createCoreController('api::premise.premise');
-
-// Changed 29 Oct to get premises/me
 module.exports = createCoreController("api::premise.premise", ({ strapi }) => ({
   // ----------------- Find with populate -----------------
   async find(ctx) {
@@ -17,8 +14,6 @@ module.exports = createCoreController("api::premise.premise", ({ strapi }) => ({
     // --- Push any additional query params to the array ---
     populateList.push(ctx.query.populate);
     ctx.query.populate = populateList.join(",");
-
-    // console.log(ctx.query)
 
     const content = await super.find(ctx);
     return content;
@@ -43,8 +38,6 @@ module.exports = createCoreController("api::premise.premise", ({ strapi }) => ({
       },
     };
     const premises = await this.find({ query: query });
-
-    // console.log(premises);
 
     if (!premises.data || !premises.data.length) {
       return ctx.unauthorized(`You can't update this entry`);
